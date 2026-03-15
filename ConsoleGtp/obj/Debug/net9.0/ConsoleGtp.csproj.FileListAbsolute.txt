@@ -1,0 +1,17 @@
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.csproj.AssemblyReference.cache
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.GeneratedMSBuildEditorConfig.editorconfig
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.AssemblyInfoInputs.cache
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.AssemblyInfo.cs
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.csproj.CoreCompileInputs.cache
+D:\ConsoleGtp\ConsoleGtp\bin\Debug\net9.0\ConsoleGtp.exe
+D:\ConsoleGtp\ConsoleGtp\bin\Debug\net9.0\ConsoleGtp.deps.json
+D:\ConsoleGtp\ConsoleGtp\bin\Debug\net9.0\ConsoleGtp.runtimeconfig.json
+D:\ConsoleGtp\ConsoleGtp\bin\Debug\net9.0\ConsoleGtp.dll
+D:\ConsoleGtp\ConsoleGtp\bin\Debug\net9.0\ConsoleGtp.pdb
+D:\ConsoleGtp\ConsoleGtp\bin\Debug\net9.0\EasyModbus.dll
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.csproj.Up2Date
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.dll
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\refint\ConsoleGtp.dll
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.pdb
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ConsoleGtp.genruntimeconfig.cache
+D:\ConsoleGtp\ConsoleGtp\obj\Debug\net9.0\ref\ConsoleGtp.dll

@@ -1,0 +1,428 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ConsoleGtp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\tests\\lightcolumntest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\tests\\lightcolumntest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\ui\\display\\consoledisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\ui\\display\\consoledisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\tests\\monitoringmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\tests\\monitoringmode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\ui\\menu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\ui\\menu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\ui\\menu\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\ui\\menu\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\controllers\\deltacontrollerswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\controllers\\deltacontrollerswrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\utils\\extensions\\intextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\utils\\extensions\\intextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\utils\\consolehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\utils\\consolehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\tests\\readalldatatest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\tests\\readalldatatest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\tests\\writereadtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\tests\\writereadtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\tests\\coordinatetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\tests\\coordinatetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\tests\\countertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\tests\\countertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\tests\\alarmtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\tests\\alarmtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\services\\eventhandlers\\buttoneventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\services\\eventhandlers\\buttoneventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\cntdeltamodbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\cntdeltamodbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\cntdeltadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\cntdeltadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\cntdelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\cntdelta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\deltacontrollertest.csproj||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\deltacontrollertest.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\models\\modbusaddresses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\models\\modbusaddresses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\models\\controllerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\models\\controllerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\utils\\inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\utils\\inputvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\consolegtp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\consolegtp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|d:\\consolegtp\\consolegtp\\core\\services\\modbusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E869246-CBAE-477E-BFB0-F1F823D3471C}|ConsoleGtp\\ConsoleGtp.csproj|solutionrelative:consolegtp\\core\\services\\modbusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ConsoleHelper.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Utils\\ConsoleHelper.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Utils\\ConsoleHelper.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Utils\\ConsoleHelper.cs",
+              "RelativeToolTip": "ConsoleGtp\\Utils\\ConsoleHelper.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAUwE8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:09:40.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IntExtensions.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Utils\\Extensions\\IntExtensions.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Utils\\Extensions\\IntExtensions.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Utils\\Extensions\\IntExtensions.cs",
+              "RelativeToolTip": "ConsoleGtp\\Utils\\Extensions\\IntExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:10:20.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MonitoringMode.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\MonitoringMode.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Tests\\MonitoringMode.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\MonitoringMode.cs",
+              "RelativeToolTip": "ConsoleGtp\\Tests\\MonitoringMode.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAewCQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:35:08.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsoleDisplay.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\UI\\Display\\ConsoleDisplay.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\UI\\Display\\ConsoleDisplay.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\UI\\Display\\ConsoleDisplay.cs",
+              "RelativeToolTip": "ConsoleGtp\\UI\\Display\\ConsoleDisplay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:07:23.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuManager.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\UI\\Menu\\MenuManager.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\UI\\Menu\\MenuManager.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\UI\\Menu\\MenuManager.cs",
+              "RelativeToolTip": "ConsoleGtp\\UI\\Menu\\MenuManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:07:01.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReadAllDataTest.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\ReadAllDataTest.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Tests\\ReadAllDataTest.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\ReadAllDataTest.cs",
+              "RelativeToolTip": "ConsoleGtp\\Tests\\ReadAllDataTest.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAUwI8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:35:21.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Program.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Program.cs",
+              "RelativeToolTip": "ConsoleGtp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T11:48:27.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeltaControllersWrapper.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Controllers\\DeltaControllersWrapper.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\Controllers\\DeltaControllersWrapper.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Controllers\\DeltaControllersWrapper.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\Controllers\\DeltaControllersWrapper.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAMwFIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:02:51.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\UI\\Menu\\MenuItem.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\UI\\Menu\\MenuItem.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\UI\\Menu\\MenuItem.cs",
+              "RelativeToolTip": "ConsoleGtp\\UI\\Menu\\MenuItem.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:07:10.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LightColumnTest.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\LightColumnTest.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Tests\\LightColumnTest.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\LightColumnTest.cs",
+              "RelativeToolTip": "ConsoleGtp\\Tests\\LightColumnTest.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowCkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:07:52.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WriteReadTest.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\WriteReadTest.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Tests\\WriteReadTest.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\WriteReadTest.cs",
+              "RelativeToolTip": "ConsoleGtp\\Tests\\WriteReadTest.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwv0AAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:08:58.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CoordinateTest.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\CoordinateTest.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Tests\\CoordinateTest.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\CoordinateTest.cs",
+              "RelativeToolTip": "ConsoleGtp\\Tests\\CoordinateTest.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAUwGQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:08:45.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CounterTest.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\CounterTest.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Tests\\CounterTest.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\CounterTest.cs",
+              "RelativeToolTip": "ConsoleGtp\\Tests\\CounterTest.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwFkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:08:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AlarmTest.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\AlarmTest.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Tests\\AlarmTest.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Tests\\AlarmTest.cs",
+              "RelativeToolTip": "ConsoleGtp\\Tests\\AlarmTest.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwFIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:08:04.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ButtonEventHandler.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Services\\EventHandlers\\ButtonEventHandler.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\Services\\EventHandlers\\ButtonEventHandler.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Services\\EventHandlers\\ButtonEventHandler.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\Services\\EventHandlers\\ButtonEventHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:06:08.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "cntDeltaModbus.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\cntDeltaModbus.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\cntDeltaModbus.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\cntDeltaModbus.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\cntDeltaModbus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:16:56.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "cntDeltaData.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\cntDeltaData.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\cntDeltaData.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\cntDeltaData.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\cntDeltaData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:16:44.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "cntDelta.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\cntDelta.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\cntDelta.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\cntDelta.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\cntDelta.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:16:34.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DeltaControllerTest.csproj",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\DeltaControllerTest.csproj",
+              "RelativeDocumentMoniker": "ConsoleGtp\\DeltaControllerTest.csproj",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\DeltaControllerTest.csproj",
+              "RelativeToolTip": "ConsoleGtp\\DeltaControllerTest.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-13T12:35:55.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ModbusAddresses.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Models\\ModbusAddresses.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\Models\\ModbusAddresses.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Models\\ModbusAddresses.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\Models\\ModbusAddresses.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvz0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:04:23.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ControllerData.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Models\\ControllerData.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\Models\\ControllerData.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Models\\ControllerData.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\Models\\ControllerData.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAywEkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:04:06.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "InputValidator.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Utils\\InputValidator.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Utils\\InputValidator.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Utils\\InputValidator.cs",
+              "RelativeToolTip": "ConsoleGtp\\Utils\\InputValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:09:53.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ConsoleGtp",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\ConsoleGtp.csproj",
+              "RelativeDocumentMoniker": "ConsoleGtp\\ConsoleGtp.csproj",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\ConsoleGtp.csproj",
+              "RelativeToolTip": "ConsoleGtp\\ConsoleGtp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-13T11:48:54.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ModbusService.cs",
+              "DocumentMoniker": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Services\\ModbusService.cs",
+              "RelativeDocumentMoniker": "ConsoleGtp\\Core\\Services\\ModbusService.cs",
+              "ToolTip": "D:\\ConsoleGtp\\ConsoleGtp\\Core\\Services\\ModbusService.cs",
+              "RelativeToolTip": "ConsoleGtp\\Core\\Services\\ModbusService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:04:45.672Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
