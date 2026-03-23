@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- ═══ ANTI-FLASH: тема применяется ДО первого рендера ═══════════════
+         Этот скрипт ОБЯЗАН быть первым в <head>, до любых <link> и <style>.
+         Он синхронно читает тему из localStorage и ставит data-theme на <html>
+         до того как браузер начнёт рисовать страницу — вспышка невозможна.
+         ════════════════════════════════════════════════════════════════════ -->
+    <script>
+        (function(){
+            var t = localStorage.getItem('arokis-theme');
+            if (!t) {
+                // Нет сохранённой темы — читаем системную через matchMedia
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AROKIS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/arokis.css">
+    <style>
+        /* ── Индикатор подключения в хедере карточки ── */
+        .card-conn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: var(--arokis-bg-subtle);
+            border: 1px solid var(--arokis-border);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--arokis-text-muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .card-conn__dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--arokis-text-muted);
+            flex-shrink: 0;
+        }
+        .card-conn.ok   { border-color: rgba(63,185,80,0.3); background: rgba(63,185,80,0.07); color: var(--arokis-ok); }
+        .card-conn.err  { border-color: rgba(248,81,73,0.3);  background: rgba(248,81,73,0.07);  color: var(--arokis-err); }
+        .card-conn.ok  .card-conn__dot { background: var(--arokis-ok);  box-shadow: 0 0 5px var(--arokis-ok); }
+        .card-conn.err .card-conn__dot { background: var(--arokis-err); box-shadow: 0 0 5px var(--arokis-err); }
+
+        .btn-sim {
+            background: rgba(47,184,196,0.10);
+            color: var(--arokis-primary);
+            border: 2px solid var(--arokis-primary);
+            padding: 6px 12px;
+            border-radius: 9px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .btn-sim:hover  { background: rgba(47,184,196,0.20); }
+        .btn-sim.paused { background: rgba(234,84,84,0.10); color: var(--arokis-accent); border-color: var(--arokis-accent); }
+    </style>
+</head>
+<body>
+
+    <div class="arokis-root">
+
+        <!-- ══ TOPBAR ══════════════════════════════════════════════════════════ -->
+        <div class="arokis-topbar">
+            <span class="arokis-title">AROKIS</span>
+            <div style="display:flex; align-items:center; gap:8px; flex-shrink:0; flex-wrap:nowrap;">
+                <a href="settings.html" class="nav-btn">Настройки</a>
+                <a href="debug.html" class="nav-btn">Диагностика</a>
+                <button class="btn-sim" id="btnSimGlobal" onclick="toggleSimGlobal()" title="Стоп/Старт симуляции для всех стримов">⏸ Симуляция</button>
+            </div>
+        </div>
+
+        <!-- ══ 3 СЛОТА (данные ротируются между 4 стримами) ════════════════════ -->
+        <div class="arokis-grid mud-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:16px;">
+
+            <!-- Слот 1 -->
+            <div class="arokis-grid-item">
+                <div class="arokis-card">
+                    <div class="arokis-card-header">
+                        <span class="arokis-card-title"><span id="cardTitle1">ЗНАЧЕНИЕ 1</span></span>
+                        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                            <div class="card-conn" id="connCard1">
+                                <div class="card-conn__dot"></div>
+                                <span id="connCardLabel1">—</span>
+                            </div>
+                            <span class="chip" id="cardChip1">Stream 1</span>
+                        </div>
+                    </div>
+                    <div id="thicknessContent1" class="arokis-values"></div>
+                    <div class="arokis-middle">
+                        <div class="arokis-controls">
+                            <button class="ctrl-btn" onclick="arokisUi.addLine(1)" title="Добавить линию">+</button>
+                            <button class="ctrl-btn" onclick="arokisUi.removeLine(1)" title="Убрать линию">−</button>
+                            <button class="ctrl-btn ctrl-btn--reset" onclick="arokisUi.resetLines(1)" title="Сбросить">X</button>
+                        </div>
+                        <div class="arokis-canvas-zone">
+                            <canvas id="circleDiagram1" class="arokis-canvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="arokis-bottom">
+                        <div class="arokis-trend-zone">
+                            <div id="thicknessChart1" class="arokis-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слот 2 -->
+            <div class="arokis-grid-item">
+                <div class="arokis-card">
+                    <div class="arokis-card-header">
+                        <span class="arokis-card-title"><span id="cardTitle2">ЗНАЧЕНИЕ 2</span></span>
+                        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                            <div class="card-conn" id="connCard2">
+                                <div class="card-conn__dot"></div>
+                                <span id="connCardLabel2">—</span>
+                            </div>
+                            <span class="chip" id="cardChip2">Stream 2</span>
+                        </div>
+                    </div>
+                    <div id="thicknessContent2" class="arokis-values"></div>
+                    <div class="arokis-middle">
+                        <div class="arokis-controls">
+                            <button class="ctrl-btn" onclick="arokisUi.addLine(2)" title="Добавить линию">+</button>
+                            <button class="ctrl-btn" onclick="arokisUi.removeLine(2)" title="Убрать линию">−</button>
+                            <button class="ctrl-btn ctrl-btn--reset" onclick="arokisUi.resetLines(2)" title="Сбросить">X</button>
+                        </div>
+                        <div class="arokis-canvas-zone">
+                            <canvas id="circleDiagram2" class="arokis-canvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="arokis-bottom">
+                        <div class="arokis-trend-zone">
+                            <div id="thicknessChart2" class="arokis-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слот 3 -->
+            <div class="arokis-grid-item">
+                <div class="arokis-card">
+                    <div class="arokis-card-header">
+                        <span class="arokis-card-title"><span id="cardTitle3">ЗНАЧЕНИЕ 3</span></span>
+                        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                            <div class="card-conn" id="connCard3">
+                                <div class="card-conn__dot"></div>
+                                <span id="connCardLabel3">—</span>
+                            </div>
+                            <span class="chip" id="cardChip3">Stream 3</span>
+                        </div>
+                    </div>
+                    <div id="thicknessContent3" class="arokis-values"></div>
+                    <div class="arokis-middle">
+                        <div class="arokis-controls">
+                            <button class="ctrl-btn" onclick="arokisUi.addLine(3)" title="Добавить линию">+</button>
+                            <button class="ctrl-btn" onclick="arokisUi.removeLine(3)" title="Убрать линию">−</button>
+                            <button class="ctrl-btn ctrl-btn--reset" onclick="arokisUi.resetLines(3)" title="Сбросить">X</button>
+                        </div>
+                        <div class="arokis-canvas-zone">
+                            <canvas id="circleDiagram3" class="arokis-canvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="arokis-bottom">
+                        <div class="arokis-trend-zone">
+                            <div id="thicknessChart3" class="arokis-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ СВОДНОЕ ОКНО ════════════════════════════════════════════════════ -->
+        <div class="arokis-card arokis-summary-card">
+            <div class="arokis-card-header">
+                <span class="arokis-card-title">СВОДКА</span>
+                <span class="chip chip--warning">Summary</span>
+            </div>
+
+            <div class="summary-body">
+
+                <!-- Левая: объединённая фигура со всеми 4 стримами -->
+                <div class="summary-combined">
+                    <div class="summary-combined-header">
+                        <span class="summary-stream-label">ВСЕ ФИГУРЫ</span>
+                        <div class="arokis-controls arokis-controls--inline">
+                            <button class="ctrl-btn" onclick="arokisUi.summaryAddLine()" title="Добавить линию">+</button>
+                            <button class="ctrl-btn" onclick="arokisUi.summaryRemoveLine()" title="Убрать линию">−</button>
+                            <button class="ctrl-btn ctrl-btn--reset" onclick="arokisUi.summaryResetLines()" title="Сбросить">X</button>
+                        </div>
+                    </div>
+                    <div class="summary-canvas-wrap summary-canvas-wrap--big">
+                        <canvas id="combinedDiagram" class="summary-canvas"></canvas>
+                    </div>
+                </div>
+
+                <!-- Центр: 3 мини-зеркала слотов -->
+                <div class="summary-streams summary-streams--3">
+                    <div class="summary-stream-item">
+                        <div class="summary-stream-label" id="summaryLabel1">Slot 1</div>
+                        <div class="summary-canvas-wrap">
+                            <canvas id="summaryDiagram1" class="summary-canvas"></canvas>
+                        </div>
+                        <div id="summaryThickness1" class="summary-thickness"></div>
+                    </div>
+                    <div class="summary-stream-item">
+                        <div class="summary-stream-label" id="summaryLabel2">Slot 2</div>
+                        <div class="summary-canvas-wrap">
+                            <canvas id="summaryDiagram2" class="summary-canvas"></canvas>
+                        </div>
+                        <div id="summaryThickness2" class="summary-thickness"></div>
+                    </div>
+                    <div class="summary-stream-item">
+                        <div class="summary-stream-label" id="summaryLabel3">Slot 3</div>
+                        <div class="summary-canvas-wrap">
+                            <canvas id="summaryDiagram3" class="summary-canvas"></canvas>
+                        </div>
+                        <div id="summaryThickness3" class="summary-thickness"></div>
+                    </div>
+                </div>
+
+                <!-- Правая: общий ApexCharts тренд -->
+                <div class="summary-chart-wrap">
+                    <div id="summaryChart" class="arokis-chart"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div><!-- /arokis-root -->
+
+    <script src="js/apexcharts.min.js"></script>
+    <script src="js/arokis-ui.js"></script>
+    <script src="js/theme-toggle.js"></script>
+
+    <script>
+        const arokis = window.chrome?.webview?.hostObjects?.arokis;
+        let simRunning = true;
+
+        async function toggleSimGlobal() {
+            try {
+                if (simRunning) {
+                    await arokis.PauseAllStreams();
+                    simRunning = false;
+                } else {
+                    await arokis.ResumeAllStreams();
+                    simRunning = true;
+                }
+                const btn = document.getElementById('btnSimGlobal');
+                btn.textContent = simRunning ? '⏸ Симуляция' : '▶ Симуляция';
+                btn.classList.toggle('paused', !simRunning);
+            } catch (e) { console.error('[Sim]', e); }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>
+        (function(){
+            var t = localStorage.getItem('arokis-theme');
+            if (!t) {
+                // Нет сохранённой темы — читаем системную через matchMedia
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AROKIS — Настройки</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/arokis.css">
+    <style>
+        .content {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 0.75em;
+            letter-spacing: 0.15em;
+            color: var(--arokis-text-muted);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        /* ── ПОЛЕ ВВОДА ── */
+        .ip-input {
+            flex: 1;
+            background: var(--arokis-input-bg);
+            border: 2px solid var(--arokis-border-active);
+            border-radius: 10px;
+            color: var(--arokis-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 11px 16px;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s, background .35s, color .35s;
+        }
+        .ip-input:focus {
+            border-color: var(--arokis-primary);
+            box-shadow: 0 0 0 3px rgba(47,184,196,0.15);
+        }
+        .ip-input::placeholder { color: var(--arokis-text-muted); font-weight: 400; }
+        .ip-input.invalid {
+            border-color: var(--arokis-accent);
+            box-shadow: 0 0 0 3px rgba(234,84,84,0.12);
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .card-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--arokis-text-muted);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .validation-msg {
+            font-size: 11px;
+            margin-top: 8px;
+            min-height: 16px;
+            color: var(--arokis-accent);
+            font-weight: 600;
+        }
+
+        /* ── КНОПКА СОХРАНИТЬ ── */
+        .btn-save {
+            background: var(--arokis-primary);
+            color: #fff;
+            border: none;
+            padding: 11px 24px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            border-radius: 10px;
+            white-space: nowrap;
+            box-shadow: 0 0.25rem 1rem rgba(47,184,196,0.35);
+            transition: background .15s, box-shadow .15s;
+        }
+        .btn-save:hover  { background: var(--arokis-primary-light); box-shadow: 0 0.4rem 1.5rem rgba(47,184,196,0.5); }
+        .btn-save:active { background: var(--arokis-primary-dark); }
+        .btn-save:disabled {
+            background: var(--arokis-border-active);
+            color: var(--arokis-text-muted);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* ── СТАТУС ── */
+        .status-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 2px solid var(--arokis-border);
+        }
+        .status-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--arokis-text-muted);
+            flex-shrink: 0;
+            transition: background .3s;
+        }
+        .status-dot.ok       { background: var(--arokis-ok);  box-shadow: 0 0 8px var(--arokis-ok); }
+        .status-dot.error    { background: var(--arokis-err); box-shadow: 0 0 8px var(--arokis-err); }
+        .status-dot.checking { background: var(--arokis-primary); animation: blink 1s infinite; }
+        .status-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--arokis-text-muted);
+        }
+
+        .btn-check {
+            margin-left: auto;
+            background: transparent;
+            color: var(--arokis-primary);
+            border: 1px solid var(--arokis-border-active);
+            padding: 7px 18px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background .15s, border-color .15s;
+        }
+        .btn-check:hover { background: rgba(47,184,196,0.10); border-color: var(--arokis-primary); }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--arokis-card-bg);
+            border: 2px solid var(--arokis-primary);
+            color: var(--arokis-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 11px 26px;
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity .25s, transform .25s;
+            pointer-events: none;
+            white-space: nowrap;
+            box-shadow: 0 0.5rem 2rem rgba(47,184,196,0.2);
+            backdrop-filter: blur(10px);
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .toast.error {
+            border-color: var(--arokis-accent);
+            color: var(--arokis-accent);
+            box-shadow: 0 0.5rem 2rem rgba(234,84,84,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="arokis-root">
+
+    <!-- ── TOPBAR ── -->
+    <div class="arokis-topbar">
+        <span class="arokis-title">AROKIS</span>
+        <div style="display:flex; gap:8px; align-items:center; flex-shrink:0; flex-wrap:nowrap;">
+            <a class="nav-btn" href="index.html">← Дашборд</a>
+            <a href="debug.html" class="nav-btn">Диагностика</a>
+            <a class="nav-btn" href="settings.html"
+               style="color:var(--arokis-primary); border-color:var(--arokis-primary); background:rgba(47,184,196,0.07);">
+                Настройки
+            </a>
+        </div>
+    </div>
+
+    <!-- ── CONTENT ── -->
+    <div class="content">
+        <div class="section-title">Параметры подключения</div>
+
+        <div class="arokis-card" style="padding: 28px;">
+
+            <div class="card-label">IP адрес контроллера</div>
+
+            <div class="input-row">
+                <input
+                    id="ipInput"
+                    class="ip-input"
+                    type="text"
+                    placeholder="192.168.1.100"
+                    maxlength="15"
+                    spellcheck="false"
+                    oninput="onIpInput()"
+                />
+
+                    <div class="card-label">Порт</div>
+                    <input id="portInput"
+                           class="ip-input"
+                           type="number"
+                           placeholder="502"
+                           min="1"
+                           max="65535"
+                           style="width:90px;flex:none;"
+                           spellcheck="false" />
+                <button class="btn-save" id="saveBtn" onclick="saveIp()" disabled>Подключить</button>
+            </div>
+            <div class="validation-msg" id="validationMsg"></div>
+
+            
+
+            <!-- Статус подключения -->
+            <div class="status-row">
+                <div class="status-dot" id="statusDot"></div>
+                <span class="status-text" id="statusText">Не проверялось</span>
+                <button class="btn-check" onclick="checkConnection()">Проверить связь</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+    const arokisNative = {
+        async getControllerIp() {
+            try { return await window.chrome.webview.hostObjects.arokis.GetControllerIp(); }
+            catch { return ""; }
+        },
+        async getControllerPort() {
+            try { return await window.chrome.webview.hostObjects.arokis.GetControllerPort(); }
+            catch { return 5000; }
+        },
+        async setControllerIp(ip, port) {
+            try { await window.chrome.webview.hostObjects.arokis.SetControllerIp(ip, port); return true; }
+            catch { return false; }
+        },
+        async pingController() {
+            try { return !!(await window.chrome.webview.hostObjects.arokis.PingController()); }
+            catch { return false; }
+        }
+    };
+
+    function isValidIp(ip) {
+        const parts = ip.trim().split(".");
+        if (parts.length !== 4) return false;
+        return parts.every(p => {
+            const n = Number(p);
+            return p !== "" && !isNaN(n) && n >= 0 && n <= 255;
+        });
+    }
+
+    function onIpInput() {
+        const input = document.getElementById("ipInput");
+        const msg   = document.getElementById("validationMsg");
+        const btn   = document.getElementById("saveBtn");
+        const val   = input.value.trim();
+        if (val === "") {
+            input.classList.remove("invalid");
+            msg.textContent = "";
+            btn.disabled = true;
+            return;
+        }
+        if (!isValidIp(val)) {
+            input.classList.add("invalid");
+            msg.textContent = "Неверный формат. Пример: 192.168.1.100";
+            btn.disabled = true;
+        } else {
+            input.classList.remove("invalid");
+            msg.textContent = "";
+            btn.disabled = false;
+        }
+    }
+
+    function getPort() {
+        const v = parseInt(document.getElementById("portInput").value);
+        return (v > 0 && v <= 65535) ? v : 502;
+    }
+
+    async function saveIp() {
+        const ip = document.getElementById("ipInput").value.trim();
+        if (!isValidIp(ip)) return;
+        const port = getPort();
+        setStatus("checking", "Подключение…");
+        const ok = await arokisNative.setControllerIp(ip, port);
+        if (ok) {
+            showToast("Подключение к " + ip + ":" + port);
+            setStatus("checking", "Ожидание ответа…");
+            setTimeout(async () => {
+                const ping = await arokisNative.pingController();
+                setStatus(ping ? "ok" : "error", ping ? "Подключено: " + ip : "Нет ответа от " + ip);
+            }, 1500);
+        } else {
+            showToast("Ошибка подключения", true);
+            setStatus("error", "Ошибка подключения");
+        }
+    }
+
+    async function checkConnection() {
+        const ip = document.getElementById("ipInput").value.trim();
+        if (!isValidIp(ip)) { showToast("Сначала введите корректный IP", true); return; }
+        setStatus("checking", "Проверка подключения…");
+        const ok = await arokisNative.pingController();
+        setStatus(ok ? "ok" : "error", ok ? "Подключено: " + ip : "Нет ответа от " + ip);
+    }
+
+    function setStatus(state, text) {
+        document.getElementById("statusDot").className  = "status-dot " + state;
+        document.getElementById("statusText").textContent = text;
+    }
+
+    let toastTimer = null;
+    function showToast(msg, isError = false) {
+        const el = document.getElementById("toast");
+        el.textContent = msg;
+        el.className = "toast" + (isError ? " error" : "");
+        void el.offsetWidth;
+        el.classList.add("show");
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => el.classList.remove("show"), 2500);
+    }
+
+    window.addEventListener("DOMContentLoaded", async () => {
+        const ip   = await arokisNative.getControllerIp();
+        const port = await arokisNative.getControllerPort();
+        if (ip) {
+            document.getElementById("ipInput").value = ip;
+            onIpInput();
+        }
+        if (port) {
+            document.getElementById("portInput").value = port;
+        }
+    });
+</script>
+
+<script src="js/theme-toggle.js"></script>
+</body>
+</html>
+
+
+
+================================================
+FILE: wwwroot/css/arokis.css

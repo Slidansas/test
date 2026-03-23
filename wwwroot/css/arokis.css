@@ -1,0 +1,605 @@
+/* ═══════════════════════════════════════════════════════
+   AROKIS — CSS
+   Светлая / тёмная тема через [data-theme="dark"] на <html>
+   ═══════════════════════════════════════════════════════ */
+
+/* ── СВЕТЛАЯ ТЕМА (по умолчанию) ─────────────────────── */
+:root {
+    --ui-scale: 1;
+
+    --arokis-primary:        #2fb8c4;
+    --arokis-primary-light:  #4dd4e0;
+    --arokis-primary-dark:   #1a9aa5;
+    --arokis-accent:         #ea5454;
+    --arokis-accent-light:   #ff6b6b;
+
+    --arokis-bg:             #f8feff;
+    --arokis-bg-card:        #ffffff;
+    --arokis-bg-subtle:      rgba(47,184,196,0.04);
+
+    --arokis-border:         rgba(47,184,196,0.12);
+    --arokis-border-active:  rgba(47,184,196,0.35);
+    --arokis-shadow:         rgba(47,184,196,0.10);
+    --arokis-shadow-hover:   rgba(47,184,196,0.18);
+
+    --arokis-text:           #1a1a1a;
+    --arokis-text-muted:     #6b7280;
+
+    --arokis-success:        #10b981;
+    --arokis-warning:        #f59e0b;
+    --arokis-ok:             #10b981;
+    --arokis-err:            #ea5454;
+
+    /* Градиенты фона */
+    --arokis-root-bg:        linear-gradient(135deg, #f8feff 0%, #e8f8f9 50%, #f0fafb 100%);
+    --arokis-root-glow1:     rgba(47,184,196,0.08);
+    --arokis-root-glow2:     rgba(234,84,84,0.06);
+
+    /* Карточки */
+    --arokis-card-bg:        linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+    --arokis-card-border:    rgba(47,184,196,0.08);
+    --arokis-card-inset:     rgba(255,255,255,0.9);
+    --arokis-card-hover-inset: rgba(255,255,255,1);
+
+    /* Topbar */
+    --arokis-topbar-bg:      linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90));
+    --arokis-topbar-border:  rgba(47,184,196,0.1);
+
+    /* Middle / Bottom */
+    --arokis-zone-bg:        linear-gradient(135deg, rgba(47,184,196,0.03), rgba(255,255,255,0.5));
+    --arokis-canvas-bg:      linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+    --arokis-trend-bg:       radial-gradient(120% 120% at 50% 0%, rgba(47,184,196,0.10) 0%, rgba(255,255,255,0.90) 55%, rgba(255,255,255,0.70) 100%),
+                             linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.74));
+    --arokis-trend-border:   rgba(47,184,196,0.18);
+
+    /* Controls */
+    --arokis-ctrl-bg:        rgba(255,255,255,0.97);
+
+    /* Input */
+    --arokis-input-bg:       rgba(255,255,255,0.85);
+
+    /* Status indicator */
+    --arokis-status-bg:      rgba(255,255,255,0.8);
+
+    /* Theme toggle */
+    --arokis-toggle-track:   rgba(47,184,196,0.15);
+    --arokis-toggle-border:  rgba(47,184,196,0.35);
+    --arokis-toggle-thumb:   #ffffff;
+    --arokis-toggle-icon-sun:  1;
+    --arokis-toggle-icon-moon: 0;
+}
+
+/* ── ТЁМНАЯ ТЕМА ──────────────────────────────────────── */
+[data-theme="dark"] {
+    --arokis-primary:        #2fb8c4;
+    --arokis-primary-light:  #4dd4e0;
+    --arokis-primary-dark:   #1a9aa5;
+    --arokis-accent:         #ff6b6b;
+    --arokis-accent-light:   #ff8888;
+
+    --arokis-bg:             #0d1117;
+    --arokis-bg-card:        #161b22;
+    --arokis-bg-subtle:      rgba(47,184,196,0.06);
+
+    --arokis-border:         rgba(47,184,196,0.15);
+    --arokis-border-active:  rgba(47,184,196,0.40);
+    --arokis-shadow:         rgba(0,0,0,0.35);
+    --arokis-shadow-hover:   rgba(47,184,196,0.12);
+
+    --arokis-text:           #e6edf3;
+    --arokis-text-muted:     #8b949e;
+
+    --arokis-success:        #3fb950;
+    --arokis-warning:        #d29922;
+    --arokis-ok:             #3fb950;
+    --arokis-err:            #ff6b6b;
+
+    /* Градиенты фона */
+    --arokis-root-bg:        linear-gradient(135deg, #0d1117 0%, #0f1923 50%, #0d1117 100%);
+    --arokis-root-glow1:     rgba(47,184,196,0.05);
+    --arokis-root-glow2:     rgba(234,84,84,0.04);
+
+    /* Карточки */
+    --arokis-card-bg:        linear-gradient(135deg, rgba(22,27,34,0.98), rgba(22,27,34,0.95));
+    --arokis-card-border:    rgba(47,184,196,0.10);
+    --arokis-card-inset:     rgba(255,255,255,0.03);
+    --arokis-card-hover-inset: rgba(255,255,255,0.06);
+
+    /* Topbar */
+    --arokis-topbar-bg:      linear-gradient(135deg, rgba(22,27,34,0.97), rgba(22,27,34,0.93));
+    --arokis-topbar-border:  rgba(47,184,196,0.12);
+
+    /* Middle / Bottom */
+    --arokis-zone-bg:        linear-gradient(135deg, rgba(47,184,196,0.04), rgba(22,27,34,0.7));
+    --arokis-canvas-bg:      linear-gradient(135deg, rgba(22,27,34,0.9), rgba(13,17,23,0.8));
+    --arokis-trend-bg:       radial-gradient(120% 120% at 50% 0%, rgba(47,184,196,0.08) 0%, rgba(22,27,34,0.95) 55%, rgba(13,17,23,0.90) 100%),
+                             linear-gradient(135deg, rgba(22,27,34,0.95), rgba(13,17,23,0.85));
+    --arokis-trend-border:   rgba(47,184,196,0.15);
+
+    /* Controls */
+    --arokis-ctrl-bg:        rgba(22,27,34,0.95);
+
+    /* Input */
+    --arokis-input-bg:       rgba(22,27,34,0.9);
+
+    /* Status indicator */
+    --arokis-status-bg:      rgba(22,27,34,0.8);
+
+    /* Theme toggle */
+    --arokis-toggle-track:   rgba(47,184,196,0.20);
+    --arokis-toggle-border:  rgba(47,184,196,0.45);
+    --arokis-toggle-thumb:   #0d1117;
+    --arokis-toggle-icon-sun:  0;
+    --arokis-toggle-icon-moon: 1;
+}
+
+/* ── ПЕРЕХОД ──────────────────────────────────────────── */
+html {
+    color-scheme: light;
+    
+}
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ── ГЛОБАЛЬНЫЙ СБРОС ПОЛЕЙ ВВОДА ─────────────────────────────────────
+   Убирает системный белый фон WebView2/браузера у всех нативных элементов.
+   ─────────────────────────────────────────────────────────────────── */
+input, select, textarea, button {
+    color-scheme: inherit;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+select,
+textarea {
+    background: var(--arokis-input-bg);
+    color: var(--arokis-text);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"])::placeholder,
+textarea::placeholder {
+    color: var(--arokis-text-muted);
+    opacity: 1;
+}
+
+html, body {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: calc(14px * var(--ui-scale));
+    background: var(--arokis-bg);
+    color: var(--arokis-text);
+    
+}
+
+/* ═══ ROOT ═══════════════════════════════════════════════ */
+.arokis-root {
+    width: 100%; min-height: 100%;
+    padding: calc(1.2rem * var(--ui-scale));
+    background: var(--arokis-root-bg);
+    position: relative;
+    display: flex; flex-direction: column; gap: calc(1.25rem * var(--ui-scale));
+    
+}
+.arokis-root::before {
+    content: ''; position: fixed; top:0; left:0; right:0; bottom:0;
+    background:
+        radial-gradient(circle at 20% 30%, var(--arokis-root-glow1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--arokis-root-glow2) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+    
+}
+.arokis-root > * { position: relative; z-index: 1; }
+
+/* ═══ TOPBAR ════════════════════════════════════════════ */
+.arokis-topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: calc(0.75rem * var(--ui-scale));
+    padding: calc(0.85rem * var(--ui-scale)) calc(1.25rem * var(--ui-scale));
+    background: var(--arokis-topbar-bg);
+    backdrop-filter: blur(12px);
+    border-radius: calc(1.125rem * var(--ui-scale));
+    box-shadow: 0 0.25rem 1.5rem var(--arokis-shadow), 0 0 0 1px var(--arokis-border), inset 0 1px 0 var(--arokis-card-inset);
+    border: 1px solid var(--arokis-topbar-border);
+    flex-shrink: 0;
+    overflow: hidden; /* не даём содержимому вылезти наружу */
+    transition: box-shadow 0.35s ease;
+}
+/* Заголовок: сжимается, но не давит кнопки */
+.arokis-title {
+    font-weight: 900; letter-spacing: 0.1em;
+    font-size: clamp(1.1em, 2.4vw, 2.2em);
+    white-space: nowrap;
+    flex-shrink: 1; /* разрешаем сжиматься */
+    min-width: 0;
+    background: linear-gradient(135deg, var(--arokis-primary), var(--arokis-primary-light), var(--arokis-primary));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    filter: drop-shadow(0 0.125rem 0.25rem rgba(47,184,196,0.15));
+}
+
+.status-indicator {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 14px;
+    background: var(--arokis-status-bg);
+    border: 1px solid var(--arokis-border);
+    border-radius: 8px;
+    
+}
+.status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #ccc; flex-shrink: 0; transition: background .3s;
+}
+.status-dot.ok      { background: var(--arokis-ok);  box-shadow: 0 0 6px var(--arokis-ok); }
+.status-dot.error   { background: var(--arokis-err); box-shadow: 0 0 6px var(--arokis-err); }
+.status-dot.checking { background: var(--arokis-primary); animation: blink 1s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.status-label { font-size: 12px; font-weight: 600; color: var(--arokis-text-muted); white-space: nowrap; }
+
+.nav-btn {
+    background: transparent;
+    color: var(--arokis-text-muted);
+    border: 1px solid var(--arokis-border);
+    padding: 6px 12px; border-radius: 8px;
+    font-family: inherit; font-weight: 600; font-size: 12px;
+    text-decoration: none; cursor: pointer; white-space: nowrap;
+    transition: color .15s, border-color .15s;
+}
+.nav-btn:hover { color: var(--arokis-primary); border-color: var(--arokis-primary); }
+
+.btn-start {
+    background: var(--arokis-primary); color: #fff; border: none;
+    padding: 9px 22px; border-radius: 8px;
+    font-family: inherit; font-weight: 700; font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 1rem rgba(47,184,196,0.35);
+    transition: background .15s, box-shadow .15s;
+}
+.btn-start:hover  { background: var(--arokis-primary-light); box-shadow: 0 0.4rem 1.5rem rgba(47,184,196,0.5); }
+.btn-start:active { background: var(--arokis-primary-dark); }
+
+/* ═══ THEME TOGGLE ══════════════════════════════════════ */
+.theme-toggle {
+    position: relative;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+}
+.theme-toggle__track {
+    position: relative;
+    width: 54px; height: 28px;
+    background: var(--arokis-toggle-track);
+    border: 1.5px solid var(--arokis-toggle-border);
+    border-radius: 14px;
+    transition: border-color 0.35s ease;
+    overflow: visible;
+}
+.theme-toggle__thumb {
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 22px; height: 22px;
+    background: var(--arokis-toggle-thumb);
+    border-radius: 50%;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.20);
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+}
+[data-theme="dark"] .theme-toggle__thumb {
+    transform: translateX(26px);
+    background: #1a9aa5;
+    box-shadow: 0 1px 6px rgba(47,184,196,0.35);
+}
+
+/* Иконки внутри thumb */
+.theme-toggle__sun,
+.theme-toggle__moon {
+    position: absolute;
+    width: 13px; height: 13px;
+    transition: opacity 0.25s ease, transform 0.35s ease;
+}
+.theme-toggle__sun  { opacity: 1;  transform: rotate(0deg) scale(1); }
+.theme-toggle__moon { opacity: 0;  transform: rotate(-90deg) scale(0.6); }
+
+[data-theme="dark"] .theme-toggle__sun  { opacity: 0;  transform: rotate(90deg) scale(0.6); }
+[data-theme="dark"] .theme-toggle__moon { opacity: 1;  transform: rotate(0deg) scale(1); }
+
+/* Звёздочки на треке (только в тёмной теме) */
+.theme-toggle__stars {
+    position: absolute; inset: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    pointer-events: none;
+}
+.theme-toggle__stars span {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: var(--arokis-primary-light);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+[data-theme="dark"] .theme-toggle__stars span { opacity: 1; }
+.theme-toggle__stars span:nth-child(1) { top: 5px;  left: 32px; }
+.theme-toggle__stars span:nth-child(2) { top: 14px; left: 38px; width: 3px; height: 3px; }
+.theme-toggle__stars span:nth-child(3) { top: 9px;  left: 44px; }
+
+/* Засечки на треке — лучи солнца (только в светлой теме) */
+.theme-toggle__glow {
+    position: absolute; inset: -3px;
+    border-radius: 17px;
+    opacity: 0;
+    box-shadow: 0 0 10px 2px rgba(47,184,196,0.3);
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+.theme-toggle:hover .theme-toggle__glow { opacity: 1; }
+
+/* ═══ CHIP ══════════════════════════════════════════════ */
+.chip {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--arokis-primary);
+    border: 1px solid var(--arokis-primary);
+    border-radius: 20px; padding: 3px 11px;
+    background: rgba(47,184,196,0.07);
+    white-space: nowrap;
+}
+.chip--warning { color: var(--arokis-warning); border-color: var(--arokis-warning); background: rgba(245,158,11,0.07); }
+
+/* ═══ CARD ══════════════════════════════════════════════ */
+.arokis-card {
+    border-radius: calc(1.25rem * var(--ui-scale));
+    padding: calc(1.5rem * var(--ui-scale));
+    display: flex; flex-direction: column; gap: calc(1.125rem * var(--ui-scale));
+    flex: 1; min-height: 0;
+    background: var(--arokis-card-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0.5rem 2rem var(--arokis-shadow), 0 0 0 1px var(--arokis-border), inset 0 1px 0 var(--arokis-card-inset);
+    border: 1px solid var(--arokis-card-border);
+    position: relative; overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1), border-color 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.arokis-card::before {
+    content: ''; position: absolute; top:0; left:0; right:0; height: 3px;
+    background: linear-gradient(90deg, transparent 0%, var(--arokis-primary) 20%, var(--arokis-primary-light) 50%, var(--arokis-primary) 80%, transparent 100%);
+    opacity: 0.6; transition: opacity .3s;
+}
+.arokis-card:hover { box-shadow: 0 0.75rem 3rem var(--arokis-shadow-hover), 0 0 0 1px var(--arokis-border-active), inset 0 1px 0 var(--arokis-card-hover-inset); transform: translateY(-2px); }
+.arokis-card:hover::before { opacity: 1; }
+
+.arokis-card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: calc(0.75rem * var(--ui-scale));
+    padding-bottom: calc(1rem * var(--ui-scale));
+    border-bottom: 2px solid var(--arokis-border);
+    flex-shrink: 0;
+}
+.arokis-card-title {
+    font-weight: 800; font-size: 1.05em; letter-spacing: 0.05em;
+    color: var(--arokis-text); text-transform: uppercase;
+}
+
+/* ═══ VALUES ════════════════════════════════════════════ */
+.arokis-values {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+    gap: calc(0.35rem * var(--ui-scale)); flex-shrink: 0; overflow: hidden;
+}
+.arokis-values:empty { display: none; }
+
+.value-block {
+    background: linear-gradient(135deg, rgba(47,184,196,0.05), rgba(47,184,196,0.01));
+    border: 1px solid var(--arokis-border);
+    border-radius: calc(0.4rem * var(--ui-scale));
+    padding: calc(0.25rem * var(--ui-scale)) calc(0.35rem * var(--ui-scale));
+    text-align: center; overflow: hidden;
+    transition: border-color 0.35s ease;
+}
+[data-theme="dark"] .value-block {
+    background: linear-gradient(135deg, rgba(47,184,196,0.08), rgba(47,184,196,0.03));
+}
+.param-name      { font-weight: 700; font-size: 0.6em; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.3; }
+.param-value     { font-weight: 800; font-size: 1em; color: var(--arokis-text); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; white-space: nowrap; line-height: 1.3; }
+.param-tolerance { font-size: 0.55em; color: var(--arokis-text-muted); font-weight: 500; line-height: 1.2; }
+
+/* ═══ MIDDLE ════════════════════════════════════════════ */
+.arokis-middle {
+    flex: 1; display: flex; flex-direction: column;
+    border: 2px solid var(--arokis-border-active);
+    border-radius: calc(1rem * var(--ui-scale));
+    padding: calc(1rem * var(--ui-scale));
+    gap: calc(0.5rem * var(--ui-scale));
+    min-height: 0;
+    background: var(--arokis-zone-bg);
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+.arokis-middle:hover { border-color: var(--arokis-primary); }
+
+.arokis-canvas-zone {
+    position: relative; flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 0; border-radius: calc(0.875rem * var(--ui-scale)); overflow: hidden;
+    background: var(--arokis-canvas-bg);
+    
+}
+.arokis-canvas { width: 100%; height: 100%; border-radius: calc(0.75rem * var(--ui-scale)); }
+
+/* ═══ CONTROLS ══════════════════════════════════════════ */
+.arokis-controls {
+    display: flex; flex-direction: row; justify-content: center; align-items: center;
+    gap: calc(0.35rem * var(--ui-scale));
+    background: var(--arokis-ctrl-bg);
+    padding: calc(0.25rem * var(--ui-scale)) calc(0.5rem * var(--ui-scale));
+    border-radius: calc(1.25rem * var(--ui-scale));
+    box-shadow: 0 0.15rem 0.5rem rgba(0,0,0,0.08), 0 0 0 1px rgba(47,184,196,0.1);
+    border: 1px solid rgba(47,184,196,0.12);
+    align-self: center; flex-shrink: 0;
+    
+}
+.arokis-controls--inline { background: var(--arokis-ctrl-bg); }
+
+.ctrl-btn {
+    width: clamp(28px, 2vw, 36px); height: clamp(28px, 2vw, 36px);
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; border: 1px solid var(--arokis-border-active);
+    border-radius: 50%; color: var(--arokis-primary);
+    font-size: clamp(14px, 1.2vw, 20px); font-weight: 700;
+    cursor: pointer; transition: background .15s, color .15s;
+    line-height: 1;
+}
+.ctrl-btn:hover  { background: rgba(47,184,196,0.12); }
+.ctrl-btn:active { background: rgba(47,184,196,0.3); }
+.ctrl-btn--reset { font-size: clamp(11px, 0.9vw, 14px); letter-spacing: 0; }
+
+/* ═══ BOTTOM ════════════════════════════════════════════ */
+.arokis-bottom {
+    flex-shrink: 0;
+    height: clamp(14rem, 28vh, 20rem);
+    border: 2px solid var(--arokis-border-active);
+    border-radius: calc(1rem * var(--ui-scale));
+    padding: calc(1rem * var(--ui-scale));
+    display: flex; flex-direction: column;
+    background: var(--arokis-zone-bg);
+    transition: border-color 0.3s ease; overflow: hidden;
+}
+.arokis-bottom:hover { border-color: var(--arokis-accent); }
+
+.arokis-trend-zone {
+    flex: 1; min-height: calc(10rem * var(--ui-scale));
+    border-radius: calc(0.9rem * var(--ui-scale)); overflow: hidden;
+    background: var(--arokis-trend-bg);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 0.14rem 0.42rem rgba(0,0,0,0.04);
+    border: 1px solid var(--arokis-trend-border);
+    
+}
+.arokis-chart { width: 100%; height: 100%; min-height: 120px; }
+
+/* ═══ GRID ══════════════════════════════════════════════ */
+.arokis-grid-item { display: flex; align-self: stretch; }
+.arokis-grid-item .arokis-card { height: 100%; flex: 1 1 auto; }
+
+/* ═══ SUMMARY ═══════════════════════════════════════════ */
+.arokis-summary-card { flex: none; }
+.arokis-summary-card::before {
+    background: linear-gradient(90deg, transparent 0%, var(--arokis-warning) 20%, #fbbf24 50%, var(--arokis-warning) 80%, transparent 100%) !important;
+}
+
+.summary-body {
+    display: flex; gap: calc(1rem * var(--ui-scale));
+    min-height: calc(18rem * var(--ui-scale));
+}
+
+.summary-combined {
+    flex: 0 0 auto; width: 28%;
+    display: flex; flex-direction: column; gap: calc(0.5rem * var(--ui-scale));
+    background: var(--arokis-zone-bg);
+    border: 2px solid var(--arokis-border-active);
+    border-radius: calc(1rem * var(--ui-scale));
+    padding: calc(0.75rem * var(--ui-scale)); overflow: hidden;
+    
+}
+.summary-combined-header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: calc(0.5rem * var(--ui-scale)); flex-shrink: 0;
+}
+.summary-stream-label {
+    font-weight: 800; font-size: 0.65em; color: var(--arokis-primary-dark);
+    text-transform: uppercase; letter-spacing: 0.06em; text-align: center; flex-shrink: 0;
+}
+.summary-canvas-wrap--big { flex: 1; display: flex; align-items: center; justify-content: center; min-height: calc(14rem * var(--ui-scale)); }
+
+.summary-streams--3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr;
+    gap: calc(0.5rem * var(--ui-scale)); flex: 0 0 auto; width: 32%;
+}
+.summary-stream-item {
+    display: flex; flex-direction: column; gap: calc(0.25rem * var(--ui-scale));
+    background: var(--arokis-zone-bg);
+    border: 1.5px solid var(--arokis-border);
+    border-radius: calc(0.75rem * var(--ui-scale));
+    padding: calc(0.4rem * var(--ui-scale)); overflow: hidden;
+    
+}
+.summary-canvas-wrap {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    min-height: calc(5rem * var(--ui-scale));
+    border-radius: calc(0.5rem * var(--ui-scale));
+    background: var(--arokis-canvas-bg); overflow: hidden;
+    
+}
+.summary-canvas { width: 100%; height: 100%; }
+
+.summary-thickness {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+    gap: calc(0.15rem * var(--ui-scale)); flex-shrink: 0;
+}
+.summary-thickness .value-block    { padding: calc(0.12rem * var(--ui-scale)) calc(0.2rem * var(--ui-scale)); border-radius: calc(0.3rem * var(--ui-scale)); }
+.summary-thickness .param-name     { font-size: 0.45em; }
+.summary-thickness .param-value    { font-size: 0.75em; }
+.summary-thickness .param-tolerance { font-size: 0.4em; }
+
+.summary-chart-wrap {
+    flex: 1; min-width: 0;
+    border: 2px solid var(--arokis-border-active);
+    border-radius: calc(1rem * var(--ui-scale));
+    padding: calc(0.75rem * var(--ui-scale));
+    background: var(--arokis-zone-bg);
+    display: flex; overflow: hidden;
+    
+}
+.summary-chart-wrap .arokis-chart { min-height: calc(14rem * var(--ui-scale)); }
+
+/* ═══ RESPONSIVE ════════════════════════════════════════ */
+@media (max-width: 1200px) {
+    .summary-body { flex-direction: column; }
+    .summary-combined, .summary-streams--3 { width: 100%; }
+    .summary-streams--3 { grid-template-columns: repeat(3, 1fr); }
+    .arokis-root > .mud-grid { grid-template-columns: repeat(2,1fr) !important; }
+}
+
+/* 900px — минимально допустимое разрешение (MinWidth в Window1.xaml).
+   Ниже этого порога макет перестаёт поддерживаться. */
+@media (max-width: 1050px) {
+    :root { --ui-scale: 0.95; }
+    /* Кнопки в топбаре компактнее */
+    .nav-btn { padding: 5px 10px; font-size: 11px; }
+}
+@media (max-width: 960px) {
+    :root { --ui-scale: 0.9; }
+    /* Топбар: title уходит на свою строку, кнопки — на следующую */
+    .arokis-topbar { flex-wrap: wrap; padding: 8px 12px; gap: 8px; }
+    .arokis-title  { width: 100%; text-align: center; font-size: 1.6em !important; }
+    .arokis-topbar > div:last-child { width: 100%; justify-content: center; }
+    .arokis-bottom { height: clamp(9rem, 18vh, 12rem); }
+    .arokis-root > .mud-grid { grid-template-columns: 1fr !important; }
+    .summary-streams--3 { grid-template-columns: repeat(2,1fr); }
+}
+@media (min-width: 1920px) { :root { --ui-scale: 1.1; } }
+@media (min-width: 2560px) { :root { --ui-scale: 1.2; } }
+
+/* ═══ TRANSITIONS ═══════════════════════════════════════ */
+.arokis-card, .arokis-middle, .arokis-bottom, .value-block {
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1), border-color 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.arokis-canvas, .summary-canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+
+
+/* ═══ ЗАМОРОЗКА АНИМАЦИЙ ПРИ СМЕНЕ ТЕМЫ ════════════════
+   Класс .theme-switching вешается на <html> на ~20мс через JS.
+   В этот момент все переходы цвета/фона/тени отключаются,
+   чтобы смена темы происходила мгновенно без "вспышки".
+   ════════════════════════════════════════════════════════ */
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+    transition: none !important;
+    animation-duration: 0.001ms !important;
+}

@@ -1,0 +1,404 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\wwwroot\\settings.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:wwwroot\\settings.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\appconfig\\configmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:appconfig\\configmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\appconfig\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:appconfig\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\models\\requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\models\\requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\tcpcontrollersource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\tcpcontrollersource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\thicknesscalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\thicknesscalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\serialcontrollersource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\serialcontrollersource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\modbustcpcontrollersource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\modbustcpcontrollersource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\controllerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\controllerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\datastorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\datastorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\controllerdataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\controllerdataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\services\\arokisapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\services\\arokisapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\models\\streamsimulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\models\\streamsimulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\models\\deviationinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\models\\deviationinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\models\\cableprojection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\models\\cableprojection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\models\\cablepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\models\\cablepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\backend\\models\\arokissettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:backend\\models\\arokissettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\wwwroot\\css\\arokis.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:wwwroot\\css\\arokis.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\wwwroot\\js\\arokis-ui.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:wwwroot\\js\\arokis-ui.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\arokisinterop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:arokisinterop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|c:\\users\\semse\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\arokis-webappwithmodbus\\window1.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{0F61ACC2-6766-5031-533E-231962E35972}|AROKIS.csproj|solutionrelative:window1.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-23T13:53:41.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConfigManager.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\AppConfig\\ConfigManager.cs",
+              "RelativeDocumentMoniker": "AppConfig\\ConfigManager.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\AppConfig\\ConfigManager.cs",
+              "RelativeToolTip": "AppConfig\\ConfigManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:52:49.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TcpControllerSource.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\TcpControllerSource.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\TcpControllerSource.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\TcpControllerSource.cs",
+              "RelativeToolTip": "Backend\\Services\\TcpControllerSource.cs",
+              "ViewState": "AgIAACwBAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:52:13.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ThicknessCalculator.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ThicknessCalculator.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\ThicknessCalculator.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ThicknessCalculator.cs",
+              "RelativeToolTip": "Backend\\Services\\ThicknessCalculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:52:11.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "settings.html",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\settings.html",
+              "RelativeDocumentMoniker": "wwwroot\\settings.html",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\settings.html",
+              "RelativeToolTip": "wwwroot\\settings.html",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAACoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-23T13:37:44.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\AppConfig\\AppConfig.cs",
+              "RelativeDocumentMoniker": "AppConfig\\AppConfig.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\AppConfig\\AppConfig.cs",
+              "RelativeToolTip": "AppConfig\\AppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:52:36.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SerialControllerSource.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\SerialControllerSource.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\SerialControllerSource.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\SerialControllerSource.cs",
+              "RelativeToolTip": "Backend\\Services\\SerialControllerSource.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:52:01.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ModbusTcpControllerSource.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ModbusTcpControllerSource.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\ModbusTcpControllerSource.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ModbusTcpControllerSource.cs",
+              "RelativeToolTip": "Backend\\Services\\ModbusTcpControllerSource.cs",
+              "ViewState": "AgIAAPIAAAAAAAAAAADwvysAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:51:19.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ControllerService.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ControllerService.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\ControllerService.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ControllerService.cs",
+              "RelativeToolTip": "Backend\\Services\\ControllerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:51:11.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DataStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\DataStorageService.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\DataStorageService.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\DataStorageService.cs",
+              "RelativeToolTip": "Backend\\Services\\DataStorageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:51:10.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ControllerDataConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ControllerDataConverter.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\ControllerDataConverter.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ControllerDataConverter.cs",
+              "RelativeToolTip": "Backend\\Services\\ControllerDataConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:51:09.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ArokisApi.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ArokisApi.cs",
+              "RelativeDocumentMoniker": "Backend\\Services\\ArokisApi.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Services\\ArokisApi.cs",
+              "RelativeToolTip": "Backend\\Services\\ArokisApi.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAA7wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:51:04.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Requests.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\Requests.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Requests.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\Requests.cs",
+              "RelativeToolTip": "Backend\\Models\\Requests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:50:58.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "StreamSimulation.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\StreamSimulation.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\StreamSimulation.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\StreamSimulation.cs",
+              "RelativeToolTip": "Backend\\Models\\StreamSimulation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:50:59.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DeviationInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\DeviationInfo.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\DeviationInfo.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\DeviationInfo.cs",
+              "RelativeToolTip": "Backend\\Models\\DeviationInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:50:57.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CableProjection.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\CableProjection.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\CableProjection.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\CableProjection.cs",
+              "RelativeToolTip": "Backend\\Models\\CableProjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:50:56.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CablePoint.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\CablePoint.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\CablePoint.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\CablePoint.cs",
+              "RelativeToolTip": "Backend\\Models\\CablePoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:50:55.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ArokisSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\ArokisSettings.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\ArokisSettings.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Backend\\Models\\ArokisSettings.cs",
+              "RelativeToolTip": "Backend\\Models\\ArokisSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:50:50.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "arokis.css",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\css\\arokis.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\arokis.css",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\css\\arokis.css",
+              "RelativeToolTip": "wwwroot\\css\\arokis.css",
+              "ViewState": "AgIAADwCAAAAAAAAAAAswFsCAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-23T13:50:07.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "arokis-ui.js",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\js\\arokis-ui.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\arokis-ui.js",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\js\\arokis-ui.js",
+              "RelativeToolTip": "wwwroot\\js\\arokis-ui.js",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAwG8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-23T13:36:44.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Window1.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Window1.xaml.cs",
+              "RelativeDocumentMoniker": "Window1.xaml.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Window1.xaml.cs",
+              "RelativeToolTip": "Window1.xaml.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:36:17.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Window1.xaml",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Window1.xaml",
+              "RelativeDocumentMoniker": "Window1.xaml",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\Window1.xaml",
+              "RelativeToolTip": "Window1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-23T13:36:11.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-23T13:35:57.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ArokisInterop.cs",
+              "DocumentMoniker": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\ArokisInterop.cs",
+              "RelativeDocumentMoniker": "ArokisInterop.cs",
+              "ToolTip": "C:\\Users\\Semse\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\AROKIS-webAppWithModbus\\ArokisInterop.cs",
+              "RelativeToolTip": "ArokisInterop.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T13:29:58.466Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

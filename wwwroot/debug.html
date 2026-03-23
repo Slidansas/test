@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- ═══ ANTI-FLASH: тема применяется ДО первого рендера ═══════════════
+         Этот скрипт ОБЯЗАН быть первым в <head>, до любых <link> и <style>.
+         Он синхронно читает тему из localStorage и ставит data-theme на <html>
+         до того как браузер начнёт рисовать страницу — вспышка невозможна.
+         ════════════════════════════════════════════════════════════════════ -->
+    <script>
+        (function(){
+            var t = localStorage.getItem('arokis-theme');
+            if (!t) {
+                // Нет сохранённой темы — читаем системную через matchMedia
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <meta charset="utf-8" />
+    <title>AROKIS — Диагностика</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/arokis.css">
+    <style>
+        .content {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .section-title {
+            font-weight: 800; font-size: 0.72em; letter-spacing: 0.15em;
+            color: var(--arokis-text-muted); text-transform: uppercase; margin-bottom: 14px;
+        }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        /* ── TEXTAREA ── */
+        .raw-input {
+            width: 100%; min-height: 130px; resize: vertical;
+            background: var(--arokis-input-bg);
+            border: 2px solid var(--arokis-border-active);
+            border-radius: 10px; padding: 12px 14px;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 12px;
+            color: var(--arokis-text); outline: none;
+            transition: border-color .2s, background .35s, color .35s;
+        }
+        .raw-input:focus { border-color: var(--arokis-primary); }
+        .raw-input::placeholder { color: var(--arokis-text-muted); }
+
+        /* ── КНОПКИ ── */
+        .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+        .btn-action {
+            padding: 9px 18px; border-radius: 9px; border: none;
+            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px;
+            cursor: pointer; transition: all .15s;
+        }
+        .btn-primary { background: var(--arokis-primary); color: #fff; box-shadow: 0 3px 10px rgba(47,184,196,0.3); }
+        .btn-primary:hover { background: var(--arokis-primary-light); }
+        .btn-ghost  { background: rgba(47,184,196,0.08); color: var(--arokis-primary); border: 2px solid var(--arokis-border-active); }
+        .btn-ghost:hover  { background: rgba(47,184,196,0.18); }
+        .btn-danger { background: rgba(234,84,84,0.08); color: var(--arokis-accent); border: 2px solid rgba(234,84,84,0.3); }
+        .btn-danger:hover { background: rgba(234,84,84,0.18); }
+        .btn-sm { padding: 5px 12px; font-size: 11px; }
+
+        /* ── ВЫБОР СТРИМА ── */
+        .stream-select { display: flex; gap: 6px; margin-bottom: 12px; }
+        .stream-btn {
+            flex: 1; padding: 8px; border-radius: 8px;
+            border: 2px solid var(--arokis-border-active);
+            background: var(--arokis-input-bg);
+            color: var(--arokis-text);
+            font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px;
+            cursor: pointer; transition: all .15s; text-align: center;
+        }
+        .stream-btn.active { color: #fff; border-color: transparent; }
+        .stream-btn[data-sid="1"].active { background: #ea5454; }
+        .stream-btn[data-sid="2"].active { background: #3b82f6; }
+        .stream-btn[data-sid="3"].active { background: #10b981; }
+        .stream-btn[data-sid="4"].active { background: #f59e0b; }
+
+        /* ── RESULT BOX ── */
+        .result-box {
+            background: var(--arokis-input-bg);
+            border: 2px solid var(--arokis-border);
+            border-radius: 10px; padding: 14px;
+            font-size: 12px; font-family: 'JetBrains Mono', monospace;
+            color: var(--arokis-text);
+            min-height: 60px; white-space: pre-wrap; word-break: break-all;
+            transition: border-color .3s, background .35s, color .35s;
+        }
+        .result-box.ok    { border-color: var(--arokis-ok);  background: rgba(16,185,129,0.07); }
+        .result-box.error { border-color: var(--arokis-err); background: rgba(234,84,84,0.07); }
+
+        /* ── ПРИМЕРЫ ── */
+        .examples-grid { display: flex; flex-direction: column; gap: 8px; }
+        .example-item {
+            background: var(--arokis-input-bg);
+            border: 2px solid var(--arokis-border);
+            border-radius: 10px; padding: 12px 14px; cursor: pointer;
+            transition: border-color .15s, background .15s;
+        }
+        .example-item:hover { border-color: var(--arokis-primary); background: rgba(47,184,196,0.06); }
+        .example-label { font-weight: 700; font-size: 11px; color: var(--arokis-primary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+        .example-code  { font-family: monospace; font-size: 11px; color: var(--arokis-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* ── СТАТУС СТРИМОВ ── */
+        .streams-status { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .stream-card {
+            background: var(--arokis-input-bg);
+            border: 2px solid var(--arokis-border);
+            border-radius: 10px; padding: 12px; text-align: center;
+            transition: border-color .3s, background .35s;
+        }
+        .stream-card.real { border-color: var(--arokis-ok); }
+        .stream-card.sim  { border-color: var(--arokis-border-active); }
+        .stream-card-name { font-weight: 800; font-size: 13px; margin-bottom: 4px; color: var(--arokis-text); }
+        .stream-card-mode { font-size: 11px; font-weight: 600; }
+        .stream-card.real .stream-card-mode { color: var(--arokis-ok); }
+        .stream-card.sim  .stream-card-mode { color: var(--arokis-text-muted); }
+        .stream-card-pts  { font-size: 10px; color: var(--arokis-text-muted); margin-top: 3px; }
+
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 700; }
+        .badge-ok  { background: rgba(16,185,129,0.15); color: var(--arokis-ok); }
+        .badge-sim { background: rgba(47,184,196,0.15); color: var(--arokis-primary); }
+
+        /* ── УСТРОЙСТВА ── */
+        .devices-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+        .device-row {
+            display: flex; align-items: center; gap: 10px;
+            background: var(--arokis-input-bg);
+            border: 2px solid var(--arokis-border);
+            border-radius: 10px; padding: 10px 14px;
+            transition: border-color .3s, background .35s;
+        }
+        .device-row.connected    { border-color: var(--arokis-ok); }
+        .device-row.disconnected { border-color: rgba(234,84,84,0.4); }
+        .device-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+        .device-dot.on  { background: var(--arokis-ok);  box-shadow: 0 0 6px var(--arokis-ok); }
+        .device-dot.off { background: var(--arokis-err); }
+        .device-name  { flex: 1; font-size: 12px; font-weight: 700; color: var(--arokis-text); }
+        .device-label { font-size: 11px; color: var(--arokis-text-muted); }
+
+        /* ── ФОРМА УСТРОЙСТВА ── */
+        .add-device-form {
+            display: grid; grid-template-columns: 80px 1fr auto auto 1fr auto;
+            gap: 8px; align-items: center;
+        }
+        .arokis-input-sm {
+            padding: 8px 10px; border-radius: 8px;
+            border: 2px solid var(--arokis-border-active);
+            background: var(--arokis-input-bg);
+            color: var(--arokis-text);
+            font-family: 'Inter', sans-serif; font-size: 12px; outline: none;
+            color-scheme: inherit;
+            transition: border-color .2s, background .35s, color .35s;
+        }
+        .arokis-input-sm::placeholder { color: var(--arokis-text-muted); }
+        .arokis-input-sm:focus { border-color: var(--arokis-primary); }
+
+        /* ── SELECT диагностики ── */
+        .diag-select {
+            padding: 8px 10px; border-radius: 8px;
+            border: 2px solid var(--arokis-border-active);
+            background: var(--arokis-input-bg);
+            color: var(--arokis-text);
+            font-family: 'Inter', sans-serif; font-size: 12px; outline: none;
+            cursor: pointer; color-scheme: inherit; max-width: 220px;
+            transition: border-color .2s, background .35s, color .35s;
+        }
+        .diag-select:focus { border-color: var(--arokis-primary); }
+    </style>
+</head>
+<body>
+<div class="arokis-root">
+
+    <div class="arokis-topbar">
+        <span class="arokis-title">AROKIS</span>
+        <div style="display:flex; gap:8px; align-items:center; flex-shrink:0; flex-wrap:nowrap;">
+            <a class="nav-btn" href="index.html">← Дашборд</a>
+            <a class="nav-btn" href="settings.html">Настройки</a>
+            <a class="nav-btn" href="debug.html"
+               style="color:var(--arokis-primary);border-color:var(--arokis-primary);background:rgba(47,184,196,0.07);">
+               Диагностика
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- ══ ПОДКЛЮЧЕНИЕ ══ -->
+        <div>
+            <div class="section-title">Подключение Modbus TCP</div>
+            <div class="arokis-card" style="padding:22px;">
+
+                <!-- Список подключённых -->
+                <div class="devices-list" id="devicesList">
+                    <div style="font-size:12px;color:var(--arokis-text-muted);">Загрузка...</div>
+                </div>
+
+                <!-- Форма подключения -->
+                <div style="display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin-top:4px;">
+                    <div>
+                        <div style="font-size:10px;font-weight:700;color:var(--arokis-text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">IP-адрес</div>
+                        <input id="mbIp" class="arokis-input-sm" placeholder="192.168.1.65" value="192.168.1.65" style="width:140px;">
+                    </div>
+                    <div>
+                        <div style="font-size:10px;font-weight:700;color:var(--arokis-text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Unit ID</div>
+                        <input id="mbUnit" class="arokis-input-sm" type="number" value="1" min="0" max="255" style="width:65px;">
+                    </div>
+                    <div>
+                        <div style="font-size:10px;font-weight:700;color:var(--arokis-text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Интервал (мс)</div>
+                        <input id="mbInterval" class="arokis-input-sm" type="number" value="1000" min="200" style="width:90px;">
+                    </div>
+                    <button class="btn-action btn-primary" onclick="connectModbus()">⚡ Подключить</button>
+                    <button class="btn-action btn-danger btn-sm" onclick="disconnectAll()">✕ Отключить все</button>
+                </div>
+
+                <div class="result-box" id="deviceResult" style="margin-top:12px;min-height:36px;padding:8px 14px;">—</div>
+            </div>
+        </div>
+
+        <!-- ══ СТАТУС СТРИМОВ ══ -->
+        <div>
+            <div class="section-title">Статус стримов</div>
+            <div class="streams-status">
+                <div class="stream-card" id="sc1"><div class="stream-card-name">Circle</div><div class="stream-card-mode">—</div><div class="stream-card-pts">—</div></div>
+                <div class="stream-card" id="sc2"><div class="stream-card-name">Triangle</div><div class="stream-card-mode">—</div><div class="stream-card-pts">—</div></div>
+                <div class="stream-card" id="sc3"><div class="stream-card-name">Square</div><div class="stream-card-mode">—</div><div class="stream-card-pts">—</div></div>
+                <div class="stream-card" id="sc4"><div class="stream-card-name">Star</div><div class="stream-card-mode">—</div><div class="stream-card-pts">—</div></div>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <!-- ── ВВОД ── -->
+            <div>
+                <div class="section-title">Тестовый ввод данных</div>
+                <div class="arokis-card" style="padding:22px;">
+                    <div style="font-size:11px;font-weight:700;color:var(--arokis-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Целевой стрим</div>
+                    <div class="stream-select">
+                        <button class="stream-btn active" data-sid="1" onclick="selectStream(1)">1 Circle</button>
+                        <button class="stream-btn"        data-sid="2" onclick="selectStream(2)">2 Triangle</button>
+                        <button class="stream-btn"        data-sid="3" onclick="selectStream(3)">3 Square</button>
+                        <button class="stream-btn"        data-sid="4" onclick="selectStream(4)">4 Star</button>
+                    </div>
+                    <div style="font-size:11px;font-weight:700;color:var(--arokis-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Сырые данные</div>
+                    <textarea class="raw-input" id="rawInput"
+                        placeholder="Вставьте данные в любом формате...&#10;&#10;Примеры:&#10;[{&quot;x&quot;:80,&quot;y&quot;:50}]&#10;[{&quot;angle&quot;:0,&quot;distance&quot;:30}]&#10;80.0,50.0"></textarea>
+                    <div class="btn-row">
+                        <button class="btn-action btn-primary" onclick="injectData()">▶ В стрим</button>
+                        <button class="btn-action btn-ghost"   onclick="injectToAll()">▶▶ Во все</button>
+                        <button class="btn-action btn-ghost"   onclick="clearInput()">Очистить</button>
+                        <button class="btn-action btn-danger"  onclick="resetStream()">Сбросить стрим</button>
+                    </div>
+                    <div style="margin-top:14px;font-size:11px;font-weight:700;color:var(--arokis-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Результат</div>
+                    <div class="result-box" id="resultBox">Ожидание данных...</div>
+                </div>
+            </div>
+
+            <!-- ── ПРИМЕРЫ ── -->
+            <div>
+                <div class="section-title">Примеры форматов</div>
+                <div class="examples-grid" id="examplesGrid"></div>
+            </div>
+        </div>
+
+        <!-- ══ ЛОГ ПОДКЛЮЧЕНИЯ ══ -->
+        <div>
+            <div class="section-title">Лог подключения</div>
+            <div class="arokis-card" style="padding:22px;">
+                <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap;">
+                    <span id="connLogCount" style="font-size:11px;font-weight:700;color:var(--arokis-text-muted);">0 событий</span>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--arokis-text);cursor:pointer;margin-left:auto;">
+                        <input type="checkbox" id="connAutoScroll" checked style="accent-color:var(--arokis-primary);">
+                        Авто-прокрутка
+                    </label>
+                    <button class="btn-action btn-ghost btn-sm" onclick="refreshConnLog()">↺ Обновить</button>
+                    <button class="btn-action btn-danger btn-sm" onclick="clearConnLog()">✕ Очистить</button>
+                </div>
+                <div id="connLogBox" style="
+                    max-height:420px; overflow-y:auto; overflow-x:hidden;
+                    background:var(--arokis-input-bg);
+                    border:2px solid var(--arokis-border);
+                    border-radius:10px; padding:8px 0;
+                    font-family:'JetBrains Mono','Fira Code',monospace; font-size:11px;
+                ">
+                    <div style="padding:8px 14px;color:var(--arokis-text-muted);">Ожидание событий подключения...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ ЛОГ СЫРЫХ ДАННЫХ С КОНТРОЛЛЕРА ══ -->
+        <div>
+            <div class="section-title">Сырые данные с контроллера</div>
+            <div class="arokis-card" style="padding:22px;">
+                <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap;">
+                    <span id="rawLogCount" style="font-size:11px;font-weight:700;color:var(--arokis-text-muted);">0 пакетов</span>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--arokis-text);cursor:pointer;margin-left:auto;">
+                        <input type="checkbox" id="rawAutoRefresh" checked style="accent-color:var(--arokis-primary);">
+                        Авто-обновление
+                    </label>
+                    <button class="btn-action btn-ghost btn-sm" onclick="refreshRawLog()">↺ Обновить</button>
+                    <button class="btn-action btn-danger btn-sm" onclick="clearRawLog()">✕ Очистить</button>
+                </div>
+                <div id="rawLogTable" style="
+                    max-height:320px; overflow-y:auto;
+                    background:var(--arokis-input-bg);
+                    border:2px solid var(--arokis-border);
+                    border-radius:10px;
+                    font-family:'JetBrains Mono','Fira Code',monospace; font-size:11px;
+                ">
+                    <table style="width:100%;border-collapse:collapse;" id="rawLogTbody">
+                        <thead style="position:sticky;top:0;background:var(--arokis-card-bg);z-index:1;">
+                            <tr style="border-bottom:2px solid var(--arokis-border);">
+                                <th style="padding:8px 10px;text-align:left;font-size:10px;color:var(--arokis-text-muted);font-weight:700;white-space:nowrap;">Время</th>
+                                <th style="padding:8px 10px;text-align:left;font-size:10px;color:var(--arokis-text-muted);font-weight:700;">Формат</th>
+                                <th style="padding:8px 10px;text-align:right;font-size:10px;color:var(--arokis-text-muted);font-weight:700;">Байт</th>
+                                <th style="padding:8px 10px;text-align:right;font-size:10px;color:var(--arokis-text-muted);font-weight:700;">Точек</th>
+                                <th style="padding:8px 10px;text-align:left;font-size:10px;color:var(--arokis-text-muted);font-weight:700;">Данные / HEX</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rawLogRows">
+                            <tr><td colspan="5" style="padding:20px;text-align:center;color:var(--arokis-text-muted);">Ожидание данных с контроллера...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ДИАГНОСТИКА ── -->
+        <div>
+            <div class="section-title">Первые точки стрима</div>
+            <div class="arokis-card" style="padding:22px;">
+                <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;">
+                    <select id="diagStreamSel" class="diag-select">
+                        <option value="1">Stream 1 — Circle</option>
+                        <option value="2">Stream 2 — Triangle</option>
+                        <option value="3">Stream 3 — Square</option>
+                        <option value="4">Stream 4 — Star</option>
+                    </select>
+                    <button class="btn-action btn-ghost btn-sm" onclick="diagnose()">Показать точки</button>
+                    <button class="btn-action btn-ghost btn-sm" onclick="diagnoseAll()">Все стримы</button>
+                </div>
+                <div class="result-box" id="diagBox">Нажмите "Показать точки"</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const arokis = window.chrome?.webview?.hostObjects?.arokis;
+
+const EXAMPLES = [
+    { label:'F01 — XY JSON',        code:'[{"x":80.0,"y":50.0},{"x":79.98,"y":50.52},{"x":79.93,"y":51.05}]' },
+    { label:'F02 — Polar JSON',      code:'[{"angle":0,"distance":30.0},{"angle":10,"distance":29.8}]' },
+    { label:'F03 — Envelope (s1)',   code:'{"sourceId":1,"points":[{"x":80,"y":50},{"x":79,"y":51}]}' },
+    { label:'F03 — Envelope (s2)',   code:'{"sourceId":2,"points":[{"x":75,"y":55},{"x":74,"y":56}]}' },
+    { label:'F03 — Envelope (s3)',   code:'{"sourceId":3,"distances":[30.0,30.1,29.8,30.2,30.0],"step":72}' },
+    { label:'F04 — Flat XY array',   code:'[80.0,50.0,79.98,50.52,79.93,51.05]' },
+    { label:'F05 — Distance array',  code:'[30.0,30.1,29.8,30.2,30.0,29.9,30.3,30.1,29.7,30.0]' },
+    { label:'F06 — CSV x,y',         code:'80.0,50.0\n79.98,50.52\n79.93,51.05\n79.85,51.57' },
+    { label:'F07 — CSV angle,dist',  code:'0,30.0\n10,29.8\n20,30.2\n30,30.1\n40,29.9' },
+    { label:'F09 — NMEA (stream 4)', code:'$CABLE,4,80.0,50.0,79.98,50.52*FF' },
+    { label:'F10 — Semicolon (s2)',  code:'STREAM=2;COUNT=3;DATA=80.0,50.0,79.98,50.52,79.93,51.05' },
+];
+
+function buildExamples() {
+    document.getElementById('examplesGrid').innerHTML = EXAMPLES.map((e,i)=>`
+        <div class="example-item" onclick="useExample(${i})">
+            <div class="example-label">${e.label}</div>
+            <div class="example-code">${e.code.replace(/\n/g,' ↵ ')}</div>
+        </div>`).join('');
+}
+function useExample(i){ document.getElementById('rawInput').value=EXAMPLES[i].code; setResult('',''); }
+
+function onDevTypeChange(){
+    const isTcp=document.getElementById('newDevType').value==='TCP';
+    document.getElementById('newDevIp').placeholder=isTcp?'192.168.1.100':'COM3';
+    document.getElementById('newDevPort').style.display=isTcp?'':'none';
+    document.getElementById('newDevBaudLabel').style.display=isTcp?'none':'';
+    document.getElementById('newDevPort').placeholder=isTcp?'5000':'115200';
+}
+async function addDevice(){
+    const type=document.getElementById('newDevType').value;
+    const ip=document.getElementById('newDevIp').value.trim();
+    const port=parseInt(document.getElementById('newDevPort').value)||(type==='TCP'?5000:115200);
+    const label=document.getElementById('newDevLabel').value.trim();
+    if(!ip){setDevResult(false,'Укажите адрес');return;}
+    try{
+        const json=type==='TCP'?await arokis.AddTcpDevice(ip,port,label):await arokis.AddSerialDevice(ip,port,label);
+        const r=JSON.parse(json);
+        setDevResult(r.ok,r.ok?`✅ Добавлено: ${r.sourceName}`:`❌ ${r.error}`);
+        await refreshDevices();
+    }catch(e){setDevResult(false,`Ошибка: ${e}`);}
+}
+async function removeDevice(n){try{await arokis.RemoveDevice(n);await refreshDevices();await refreshStatus();}catch(e){console.error(e);}}
+async function disconnectAll(){try{await arokis.DisconnectController();setDevResult(true,'✅ Все отключены');await refreshDevices();await refreshStatus();}catch(e){setDevResult(false,String(e));}}
+async function refreshDevices(){
+    try{
+        const devices=JSON.parse(await arokis.GetDeviceList());
+        const list=document.getElementById('devicesList');
+        if(!devices.length){list.innerHTML='<div style="font-size:12px;color:var(--arokis-text-muted);">Нет подключённых устройств</div>';return;}
+        list.innerHTML=devices.map(d=>`
+            <div class="device-row ${d.connected?'connected':'disconnected'}">
+                <div class="device-dot ${d.connected?'on':'off'}"></div>
+                <div><div class="device-name">${d.sourceName}</div>${d.label?`<div class="device-label">${d.label}</div>`:''}</div>
+                <button class="btn-action btn-danger btn-sm" style="margin-left:auto;" onclick="removeDevice(${JSON.stringify(d.sourceName)})">✕</button>
+            </div>`).join('');
+    }catch(e){document.getElementById('devicesList').innerHTML=`<div style="font-size:12px;color:var(--arokis-err);">${e}</div>`;}
+}
+function setDevResult(ok,text){const b=document.getElementById('deviceResult');b.textContent=text;b.className='result-box '+(ok?'ok':'error');}
+
+let selectedStream=1;
+function selectStream(id){selectedStream=id;document.querySelectorAll('.stream-btn').forEach(b=>b.classList.toggle('active',+b.dataset.sid===id));}
+
+async function injectData(){
+    const raw=document.getElementById('rawInput').value.trim();
+    if(!raw){setResult(false,'Введите данные');return;}
+    try{const r=JSON.parse(await arokis.InjectRawData(raw,selectedStream));setResult(r.ok,r.ok?`✅ Формат: ${r.format}\n   Точек:  ${r.points}\n   Стрим:  ${r.sourceId}`:`❌ ${r.error}`);}
+    catch(e){setResult(false,`Ошибка: ${e}`);}
+    await refreshStatus();
+}
+async function injectToAll(){
+    const raw=document.getElementById('rawInput').value.trim();
+    if(!raw){setResult(false,'Введите данные');return;}
+    try{const rs=JSON.parse(await arokis.InjectRawDataToAll(raw));const ok=rs.every(r=>r.ok);setResult(ok,ok?`✅ Во все 4 стрима\n   Формат: ${rs[0].format}\n   Точек: ${rs[0].points}`:`Частично: ${rs.map((r,i)=>r.ok?`✅S${i+1}`:`❌S${i+1}`).join(' ')}`);}
+    catch(e){setResult(false,`Ошибка: ${e}`);}
+    await refreshStatus();
+}
+function setResult(ok,text){const b=document.getElementById('resultBox');if(text===''){b.textContent='Ожидание данных...';b.className='result-box';return;}b.textContent=text;b.className='result-box '+(ok?'ok':'error');}
+function clearInput(){document.getElementById('rawInput').value='';setResult('','');}
+async function resetStream(){try{await arokis.ResumeStream(selectedStream);setResult(true,`♻️ Стрим ${selectedStream} сброшен`);await refreshStatus();}catch(e){setResult(false,String(e));}}
+
+async function diagnose(){
+    const sid=+document.getElementById('diagStreamSel').value;
+    try{const text=await arokis.DiagnoseStream(sid,15);const b=document.getElementById('diagBox');b.textContent=text;b.className='result-box ok';}
+    catch(e){const b=document.getElementById('diagBox');b.textContent=String(e);b.className='result-box error';}
+}
+async function diagnoseAll(){
+    try{
+        const list=JSON.parse(await arokis.DiagnoseAllStreams());
+        const text=list.map(s=>`Stream ${s.streamId} (${s.name}): ${s.points} точек | ${s.hasRealData?'🟢 РЕАЛЬНЫЕ':'🔵 симуляция'} | ${s.isRunning?'▶':'⏸'} | ${s.lastUpdate}`).join('\n');
+        const b=document.getElementById('diagBox');b.textContent=text;b.className='result-box ok';
+    }catch(e){const b=document.getElementById('diagBox');b.textContent=String(e);b.className='result-box error';}
+}
+
+async function refreshStatus(){
+    try{
+        for(let i=1;i<=4;i++){const text=await arokis.DiagnoseStream(i,1);const card=document.getElementById('sc'+i);if(!card)continue;const match=text.match(/(\d+) points/);card.querySelector('.stream-card-pts').textContent=match?`${match[1]} точек`:'? точек';}
+        const status=JSON.parse(await arokis.GetSimulationStatus());
+        for(const [sid,s] of Object.entries(status)){const card=document.getElementById('sc'+sid);if(!card)continue;card.className='stream-card '+(s.hasRealData?'real':'sim');card.querySelector('.stream-card-mode').innerHTML=s.hasRealData?'<span class="badge badge-ok">Реальные данные</span>':(s.running?'<span class="badge badge-sim">Симуляция</span>':'<span class="badge" style="background:rgba(234,84,84,0.12);color:var(--arokis-err)">Пауза</span>');}
+    }catch(e){console.error('[status]',e);}
+}
+
+async function connectModbus(){
+    const ip       = document.getElementById('mbIp').value.trim();
+    const unit     = +document.getElementById('mbUnit').value;
+    const interval = +document.getElementById('mbInterval').value;
+    if(!ip){ setDevResult(false,'Введите IP-адрес'); return; }
+    setDevResult(true, `⏳ Подключение к ${ip}:502...`);
+    try{
+        const r = JSON.parse(await arokis.ConnectModbusTcp(ip, 502, unit, interval));
+        setDevResult(r.ok, r.ok ? `✅ ${r.message}` : `❌ ${r.message}`);
+        await refreshDevices();
+    }catch(e){ setDevResult(false, String(e)); }
+}
+
+// ── Лог подключения ──────────────────────────────────────────────────────────
+const LEVEL_STYLE = {
+    OK:    'color:#10b981;font-weight:700;',
+    ERROR: 'color:#ea5454;font-weight:700;',
+    WARN:  'color:#f59e0b;font-weight:700;',
+    INFO:  'color:var(--arokis-text-muted);',
+    DATA:  'color:var(--arokis-primary);',
+    PARSE: 'color:#a78bfa;font-weight:700;',
+};
+let _connLogLastCount = 0;
+async function refreshConnLog(){
+    try{
+        const items = JSON.parse(await arokis.GetConnectionLog(100));
+        document.getElementById('connLogCount').textContent = items.length + ' событий';
+        if(items.length === _connLogLastCount) return;
+        _connLogLastCount = items.length;
+        const box = document.getElementById('connLogBox');
+        if(!items.length){ box.innerHTML='<span style="color:var(--arokis-text-muted);">Нет событий</span>'; return; }
+        box.innerHTML = items.map(e=>{
+            const st  = LEVEL_STYLE[e.level] || LEVEL_STYLE.INFO;
+            const msg = (e.message||'').replace(/</g,'&lt;');
+            const bgMap = { OK:'rgba(16,185,129,0.06)', ERROR:'rgba(234,84,84,0.06)', WARN:'rgba(245,158,11,0.06)' };
+            const bg  = bgMap[e.level] || 'transparent';
+            return `<div style="padding:4px 14px;border-bottom:1px solid rgba(128,128,128,0.08);background:${bg};">
+                <span style="color:var(--arokis-text-muted);user-select:none;">${e.time} </span><span style="${st}user-select:none;">[${e.level}] </span><span style="color:var(--arokis-text-muted);user-select:none;">${e.source} </span><span style="color:var(--arokis-text);word-break:break-word;white-space:pre-wrap;">${msg}</span>
+            </div>`;
+        }).join('');
+        if(document.getElementById('connAutoScroll').checked)
+            box.scrollTop = box.scrollHeight;
+    }catch(e){console.error('[connLog]',e);}
+}
+async function clearConnLog(){
+    try{await arokis.ClearConnectionLog();_connLogLastCount=0;await refreshConnLog();}catch(e){console.error(e);}
+}
+
+let _rawLogLastCount = 0;
+async function refreshRawLog(){
+    try{
+        const items = JSON.parse(await arokis.GetRawLog(50));
+        document.getElementById('rawLogCount').textContent = items.length + ' пакетов';
+        if(items.length === _rawLogLastCount) return;
+        _rawLogLastCount = items.length;
+        const tbody = document.getElementById('rawLogRows');
+        if(!items.length){
+            tbody.innerHTML='<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--arokis-text-muted);">Ожидание данных с контроллера...</td></tr>';
+            return;
+        }
+        const rows = [...items].reverse().map(e=>{
+            const color = e.ok ? 'var(--arokis-ok)' : e.format==='binary'||e.format==='unknown' ? 'var(--arokis-err)' : 'var(--arokis-primary)';
+            const raw = (e.raw||'').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            const hex = (e.hex||'').replace(/</g,'&lt;');
+            const tooltip = `HEX: ${hex}\nТекст: ${raw}`;
+            return `<tr style="border-bottom:1px solid var(--arokis-border);">
+                <td style="padding:6px 10px;color:var(--arokis-text-muted);white-space:nowrap;">${e.time}</td>
+                <td style="padding:6px 10px;color:${color};font-weight:700;white-space:nowrap;">${e.format}</td>
+                <td style="padding:6px 10px;text-align:right;color:var(--arokis-text-muted);">${e.bytes}</td>
+                <td style="padding:6px 10px;text-align:right;color:var(--arokis-text);">${e.points||0}</td>
+                <td style="padding:6px 10px;color:var(--arokis-text);word-break:break-word;white-space:pre-wrap;max-width:500px;">${raw || hex}</td>
+            </tr>`;
+        }).join('');
+        tbody.innerHTML = rows;
+    }catch(e){console.error('[rawLog]',e);}
+}
+async function clearRawLog(){
+    try{await arokis.ClearRawLog();_rawLogLastCount=0;await refreshRawLog();}catch(e){console.error(e);}
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+    buildExamples(); refreshDevices(); refreshStatus(); refreshRawLog(); refreshConnLog();
+    setInterval(()=>{refreshStatus();refreshDevices();},3000);
+    setInterval(()=>{
+        if(document.getElementById('rawAutoRefresh').checked) refreshRawLog();
+        refreshConnLog();
+    },1000);
+});
+</script>
+
+<script src="js/theme-toggle.js"></script>
+</body>
+</html>
+
+
+
+================================================
+FILE: wwwroot/index.html

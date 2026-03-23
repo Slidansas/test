@@ -1,0 +1,16 @@
+<Window x:Class="Photino.Blazor.AROKIS.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Photino.Blazor.AROKIS"
+        mc:Ignorable="d"
+        Title="AROKIS"
+        Width="1280" Height="800"
+        MinWidth="900" MinHeight="600"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <wpf:WebView2 x:Name="WebView"/>
+    </Grid>
+</Window>
